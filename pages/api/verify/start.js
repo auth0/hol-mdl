@@ -20,7 +20,6 @@ export default async function handler(req, res) {
     }
 }
 
-
 async function run() {
     const bearerToken = await getVdcsBearer();
 
@@ -38,6 +37,5 @@ async function run() {
 
     const { verificationId, engagement } = await result.json();
 
-    // the url is the "QR Code" that a wallet would scan
     return {verificationId, engagement };
 }
