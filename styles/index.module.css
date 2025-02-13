@@ -1,0 +1,80 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.presentation {
+  width: 70vw;
+  background: #282828;
+  margin: 20px;
+}
+
+.button {
+  padding: 20px 40px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #314dd0;
+  border: none;
+}
+.reset {
+  margin-top: 60px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #262f57;
+  border: none;
+}
+
+.flowselect {
+  margin: 20px;
+}
+
+.code {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  padding: 20px 10px;
+  background: none;
+}
+
+.jwt {
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 20px;
+}
+
+
+.qrCodeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
