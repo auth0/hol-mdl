@@ -5,11 +5,13 @@ const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 const AUTH0_SECRET = process.env.AUTH0_SECRET;
 const TEMPLATE_ID = process.env.TEMPLATE_ID;
+const PROTOCOL = process.env.PROTOCOL;
 
 if (!AUTH0_DOMAIN) throw new Error("AUTH0_DOMAIN not set");
 if (!AUTH0_CLIENT_ID) throw new Error("AUTH0_CLIENT_ID not set");
 if (!AUTH0_SECRET) throw new Error("AUTH0_SECRET not set");
 if (!TEMPLATE_ID) throw new Error("TEMPLATE_ID not set");
+if (!PROTOCOL) throw new Error("PROTOCOL not set");
 
 export default async function handler(req, res) {
     try {
@@ -31,7 +33,7 @@ async function run() {
         },
         body: JSON.stringify({
             template_id: TEMPLATE_ID,
-            protocol: "mdoc/webapi/v1.0",
+            protocol: PROTOCOL,
         }),
     })
 

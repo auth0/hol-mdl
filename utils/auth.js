@@ -22,7 +22,7 @@ export async function getVdcsBearer() {
         body: JSON.stringify({
             client_id: AUTH0_CLIENT_ID,
             client_secret: AUTH0_SECRET,
-            audience: `https://${AUTH0_DOMAIN}/vdcs`,
+            audience: `https://${AUTH0_DOMAIN}/vdcs/`,
             grant_type: "client_credentials",
         }),
     });
