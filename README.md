@@ -17,22 +17,22 @@ npm i
 Here you will create a **Verification Template** that verifies credentials. A **Verification Template** allows Auth0 to prompt and verify credentials matching a particular criteria.
 
 1. Using the left nav go to **Credentials > Verification.**
-2. Click **+ Create Verification Template.**\
-Open image-20250211-111139.png\
-image-20250211-111139.png\
-3. Name the template
-4. Add Fields for querying and mark if you want to retain them or not.\
-Open image-20250211-111714.png\
-image-20250211-111714.png
-5. Click **Create Template** to add the template to your Auth0 Lab tenant.
-6. Copy the Template ID that is displayed below the Verification Template name and take note of it, as you will use it in another section. The **Template ID** is prefixed **vct_.**\
-Open image-20250212-101655.png\
-image-20250212-101655.png
+2. Click **+ Create Verification Template.**
+
+![Create a Verification Template](https://cdn.auth0.com/website/auth0/hol-mdl/create_verification_template.png)
+3. Name the template\
+4. Add Fields for querying and mark if you want to retain them or not.
+
+![Add fields to the template](https://cdn.auth0.com/website/auth0/hol-mdl/create_verification_template_details.png)
+5. Click **Create Template** to add the template to your Auth0 Lab tenant.\
+6. Copy the Template ID that is displayed below the Verification Template name and take note of it, as you will use it in another section. The **Template ID** is prefixed **vct_.**
+
+![Copy the Template ID](https://cdn.auth0.com/website/auth0/hol-mdl/copy_template_id.png)
 ### Create new API
 1. First you will need to copy the **Domain** value. In order to do that using the left nav go to **Applications > Applications** and open an existing application. Then go to **Settings** tab and copy the **Domain** value. 
 2. Using the left nav go to **Applications > APIs.**
 3. Click **+ Create API.**
-4. In the **identifier** field make sure to use saved **Domain** from step 1 and append **/vdcs.**  So the format would be: `https://${DOMAIN}.auth0c.com/vdcs`\
+4. In the **identifier** field make sure to use saved **Domain** from step 1 and append **/vdcs.**  So the format would be: `https://${DOMAIN}.auth0c.com/vdcs`
 Example: `https://hol-mdl-xyz.iam-foundations-mdl2.auth0c.com/vdcs` 
 5. Navigate to **Permissions** tab and add following permissions (scopes):
    - `read:verification_request`
@@ -44,12 +44,12 @@ Now, you will create an application within your Auth0 tenant that will receive t
 
 1. Using the left nav go to **Applications > Applications.**
 2. Click **+ Create Application.**
-3. Pick **Machine to Machine Applications** and click **Create.**\
-Open image-20250211-112851.png\
-image-20250211-112851.png
-4. Authorise the API created in previous **Create new API step.**  Make sure to grant permissions as well.\
-Open image-20250212-101950.png\
-image-20250212-101950.png
+3. Pick **Machine to Machine Applications** and click **Create.**
+
+![M2M Application Selection](https://cdn.auth0.com/website/auth0/hol-mdl/create_machine_to_machine_app.png)
+4. Authorise the API created in previous **Create new API step.**  Make sure to grant permissions as well.
+
+![Authorize the API](https://cdn.auth0.com/website/auth0/hol-mdl/create_machine_to_machine_app_details.png)
 5. Navigate to the **Settings** tab and take note of the **Domain**, **Client ID**, **Client Secret**, as you will use them in another section.
 
 ## Adding Verification to the Sample App
@@ -67,10 +67,9 @@ Edit the `.env.local` file, and set the missing values:
 
 ### App Structure
 
-The code in its current state implements a web server with a simple UI. The UI has a button that starts the verification process.\
-Open image-20250212-094610.png\
-image-20250212-094610.png
+The code in its current state implements a web server with a simple UI. The UI has a button that starts the verification process.
 
+![App structure](https://cdn.auth0.com/website/auth0/hol-mdl/credentail_verification_app.png)
 The following high level steps describe how the app works:
 1. When the **Start Presentation Flow** button is clicked, the app starts a verification request by making an API call to Auth0. In this API call, the app sends the `clientid`, `templateid` variables to the API. Auth0 replies with a `verificationId` (Verification ID (UUIDv4) , `engagement` (MDoc URI).\
 The `engagement` is what you encode into a QR code for a wallet application to scan and start the process.
@@ -254,9 +253,9 @@ async function run(verificationId) {
 That is all that is needed to implement verification through Auth0. To test the flow follow these steps.
 1. In a terminal, `run npm run dev`. This should start the app on localhost:3000.
 2. Open the application at http://localhost:3000/.
-3. Click **Start Presentation Flow**.\
-Open image-20250212-094610.png\
-image-20250212-094610.png\
+3. Click **Start Presentation Flow**.
+
+![Yep, same image!](https://cdn.auth0.com/website/auth0/hol-mdl/credentail_verification_app.png)
 4. Once ready, scan the QR code or click **here**. Make the engagement with your wallet 
 5. Back in the app, you will see the JSON contents of the Verifiable Presentation received from the wallet. 
  
