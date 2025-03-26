@@ -5,7 +5,7 @@ This repo is for a hands-on lab that walks through how to use the Verification S
 ## Prerequisites
 
 - Install Node.js version 20.x locally.
-- Clone the [Sample App repo](https://github.com/atko-cic/hol-mdl).\
+- Clone the [Sample App repo](https://github.com/auth0/hol-mdl).\
 \
 Install dependencies for the hol-mdl project you just cloned with npm.
 ```
@@ -32,7 +32,7 @@ Here you will create a **Verification Template** that verifies credentials. A **
 1. First you will need to copy the **Domain** value. In order to do that using the left nav go to **Applications > Applications** and open an existing application. Then go to **Settings** tab and copy the **Domain** value. 
 2. Using the left nav go to **Applications > APIs.**
 3. Click **+ Create API.**
-4. In the **identifier** field make sure to use saved **Domain** from step 1 and append **/vdcs.**  So the format would be: `https://${DOMAIN}.auth0c.com/vdcs`
+4. In the **identifier** field make sure to use saved **Domain** from step 1 and append **/vdcs.**  So the format would be: `https://${DOMAIN}.auth0c.com/vdcs`.\
 Example: `https://hol-mdl-xyz.iam-foundations-mdl2.auth0c.com/vdcs` 
 5. Navigate to **Permissions** tab and add following permissions (scopes):
    - `read:verification_request`
