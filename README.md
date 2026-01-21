@@ -262,3 +262,5 @@ That is all that is needed to implement verification through Auth0. To test the 
 > [!NOTE]
 >The full completed code for this lab is available on the endstate branch of the repo:
 >https://github.com/Auth0/hol-mdl/tree/endstate
+
+
